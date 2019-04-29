@@ -76,7 +76,6 @@
     </style>
 </head>
 <body onload="window.print();">
-
 <div class="page">
     <p class="text-center">VAL TRADING S.A.C.<br>
 	JR. SEBASTIAN LORENTE 698<br>
