@@ -7,9 +7,9 @@
     <style>
 
         @font-face {
-            font-family: 'TelidonRegular';
-            src: url('http://206.189.179.173/grifo/assets/fonts/TelidonRegular.ttf');
-            /*src: url('http://localhost/grifo/assets/fonts/TelidonRegular.ttf');*/
+            font-family: 'matricha';
+            /*src: url('http://206.189.179.173/grifo/assets/fonts/TelidonRegular.ttf');*/
+            src: url('http://localhost/grifo/assets/fonts/matricha.ttf');
             font-weight: normal;
             font-style: normal;
         }
@@ -21,7 +21,7 @@
         padding: 0;
         background-color: #FAFAFA;
         font-size: 14px;
-        font-family: 'TelidonRegular';
+        font-family: 'matricha';
         line-height: 100%;
 	    }
 	    * {
@@ -30,7 +30,7 @@
 	    }
 	    .page {
 	        width: 80mm;
-	        min-height: 150mm;
+	        min-height: 200mm;
 	        padding: 2mm;
 	        margin: 1mm auto;
 	        border: 1px #D3D3D3 solid;
@@ -40,13 +40,13 @@
 	    }
 	    .text-center{text-align: center;}
 	    @page {
-            size: 3.14961in 5.90551in;
+            size: 3.14961in 7.87402in;
 	        margin: 0;
 	    }
 	    @media print {
         html, body {
             width: 80mm;
-            height: 150mm;        
+            height: 200mm;        
         }
         .page {
 	            margin: 0;
@@ -135,13 +135,13 @@
             <td class="right"><?php echo $info->sub; ?></td>
         </tr>
         <tr>
-            <td>**** IGV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
+            <td>**** IGV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->igv; ?></td>
         </tr>
         <tr>
-            <td>**** TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
+            <td>**** TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->total; ?></td>
