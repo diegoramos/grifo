@@ -45,23 +45,20 @@ $(function() {
 	            {
 				alert('Error');
 	            }
-	 
 	        },
 	        error: function (jqXHR, textStatus, errorThrown)
 	        {
 	            alert('Error adding / update data');
-
-
 	        }
-
 
 		})
 
-		
 	});
 
     // Bootstrap datepicker
-    $('#date_1 .input-group.date').datepicker({
+
+    $('.form-control.revision').datepicker({
+        format: 'yyyy-mm-dd',
         todayBtn: "linked",
         keyboardNavigation: false,
         forceParse: false,
@@ -69,6 +66,14 @@ $(function() {
         autoclose: true
     });
 
+    $('.form-control.cilindro').datepicker({
+        format: 'yyyy-mm-dd',
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true
+    });
 
 });
 

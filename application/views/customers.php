@@ -11,7 +11,7 @@
                                     <th>Empresa</th>
                                     <th>Ticket</th>
                                     <th>Nombre</th>
-                                    <th>Vendor</th>
+                                    <th>Vendedor</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>

@@ -35,8 +35,8 @@ class Customers extends CI_Controller {
 			$row[] = $customer->nom;
 			$row[] = $customer->usu;
 			//add html for action
-            $row[] = '<a class="btn btn-sm btn-success" href="'.base_url().'imprimir/ver_pdf/'.$customer->id.'" target="_blank"><i class="glyphicon glyphicon-pencil"></i> Descargar</a>
-            	<a class="btn btn-sm btn-primary" href="'.base_url().'imprimir/ver_html/'.$customer->id.'" target="_blank"><i class="glyphicon glyphicon-pencil"></i> Imprimir</a>';
+            $row[] = '<a class="btn btn-success" href="'.base_url().'imprimir/ver_pdf/'.$customer->id.'" target="_blank"><i class="sidebar-item-icon fa fa-download"></i> Descargar</a>
+            	<a class="btn btn-primary" href="'.base_url().'imprimir/ver_html/'.$customer->id.'" target="_blank"><i class="sidebar-item-icon fa fa-print"></i> Imprimir</a>';
 
 
 			$data[] = $row;

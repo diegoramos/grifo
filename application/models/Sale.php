@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Sale extends CI_Model {
 
 	var $table = 'salida';
-   	var $column_order = array('name','ruc','dir',null); //set column field database for datatable orderable
-   	var $column_search = array('name','ruc'); //set column field database for datatable searchable just firstname , lastname , address are searchable
+   	var $column_order = array('fecha','emp','nro','nom','usu',null); //set column field database for datatable orderable
+   	var $column_search = array('nro','nom'); //set column field database for datatable searchable just firstname , lastname , address are searchable
    	var $order = array('id' => 'desc'); // default order 
 
    private function _get_datatables_query()

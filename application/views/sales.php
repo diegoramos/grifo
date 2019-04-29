@@ -51,6 +51,11 @@
                             <div class="col-sm-2">
                                 <input name="hora" id="hora" value="<?php echo date('H:i:s');?>" class="form-control" type="text">
                             </div>
+                            <label class="col-sm-1 col-form-label">Recibo:</label>
+                            <div class="col-sm-2">
+                                <input name="recibo" id="recibo" class="form-control" type="text">
+                            </div>
+
                         </div>
 
                         <div class="form-group row">
@@ -77,25 +82,21 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-sm-1 col-form-label">Recibo:</label>
-                            <div class="col-sm-2">
-                                <input name="recibo" id="recibo" class="form-control" type="text">
-                            </div>
                             <label class="col-sm-1 col-form-label text-right">Kilometraje:</label>
                             <div class="col-sm-2">
                                 <input name="kilome" id="kilome" class="form-control" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Placa:</label>
-                            <div class="col-sm-1">
+                            <div class="col-sm-2">
                                 <input name="placa" id="placa" class="form-control" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">F.Revision:</label>
-                            <div class="col-sm-1">
-                                <input name="fecha_revi" id="fecha_revi" class="form-control" type="text">
+                            <div class="col-sm-2">
+                                <input name="fecha_revi" id="fecha_revi" class="form-control revision" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">F.Cilindro:</label>
-                            <div class="col-sm-1">
-                                <input name="fecha_cili" id="fecha_cili" class="form-control" type="text">
+                            <div class="col-sm-2">
+                                <input name="fecha_cili" id="fecha_cili" class="form-control cilindro" type="text">
                             </div>
                         </div>
 

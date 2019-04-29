@@ -20,7 +20,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() ?>customers"><i class="sidebar-item-icon fa fa-shopping-cart"></i>
+                        <a href="<?php echo base_url() ?>customers"><i class="sidebar-item-icon fa fa-users"></i>
                             <span class="nav-label">CLIENTES</span>
                         </a>
                     </li>

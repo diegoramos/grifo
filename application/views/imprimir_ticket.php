@@ -11,16 +11,16 @@
         margin: 0;
         padding: 0;
         background-color: #FAFAFA;
-        font: 7pt 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;;
+        font: 8pt 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;;
 	    }
 	    * {
 	        box-sizing: border-box;
 	        -moz-box-sizing: border-box;
 	    }
 	    .page {
-	        width: 65mm;
+	        width: 70mm;
 	        min-height: 150mm;
-	        padding: 3mm;
+	        padding: 2mm;
 	        margin: 1mm auto;
 	        border: 1px #D3D3D3 solid;
 	        border-radius: 5px;
@@ -29,12 +29,12 @@
 	    }
 	    .text-center{text-align: center;}
 	    @page {
-            size: 3.14961in 7.08661in;
+            size: 2.75591in 7.08661in;
 	        margin: 0;
 	    }
 	    @media print {
         html, body {
-            width: 65mm;
+            width: 70mm;
             height: 150mm;        
         }
         .page {
