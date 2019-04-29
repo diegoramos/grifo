@@ -7,7 +7,10 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		//Load Dependencies
-
+        if($this->session->userdata('user_id') <= 0 )
+        {
+            redirect('login');
+        }
 	}
 
 	// List all your items
@@ -18,6 +21,15 @@ class Home extends CI_Controller {
 		$this->load->view('template/menu', $data, FALSE);
 		$this->load->view('home', $data, FALSE);
 		$this->load->view('template/footer', $data, FALSE);
+	}
+
+	public function logout($value='')
+	{
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('first_name');
+        $sdata['message']="Has salido satisfactoriamente del sistema";
+        $this->session->set_userdata($sdata);
+        redirect('login','refresh');
 	}
 
 }

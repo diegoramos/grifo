@@ -61,7 +61,7 @@
                         <div class="form-group row">
                             <label class="col-sm-1 col-form-label">Usuario:</label>
                             <div class="col-sm-2">
-                                <input name="usu" id="usu" class="form-control" type="text">
+                                <input name="usu" id="usu" class="form-control" value="<?php echo $this->session->userdata('first_name'); ?>" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Turno:</label>
                             <div class="col-sm-2">
@@ -124,36 +124,34 @@
                             <div class="col-sm-12">
                                 <table class="table table-hover" id="table">
                                     <thead>
-                                    <tr data-tabullet-map="id">
-                                        <th width="50" data-tabullet-map="_index" data-tabullet-readonly="true">
-                                            Nro
-                                        </th>
-                                        <th data-tabullet-map="articulo">Nombre del articulo</th>
-                                        <th data-tabullet-map="cantidad">Cantidad</th>
-                                        <th data-tabullet-map="precio">Precio</th>
-                                        <th data-tabullet-map="total">Sub Total</th>
-                                        <th width="50" data-tabullet-type="edit"></th>
-                                        <th width="50" data-tabullet-type="delete"></th>
+                                    <tr>
+                                        <th>Nro</th>
+                                        <th>Nombre del articulo</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio</th>
+                                        <th>Sub Total</th>
+                                        <th width="50"></th>
+                                        <th width="50"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <tr data-tabullet-id="-1">
+                                        <tr>
                                             <td></td>
-                                            <td><input type="text" id="articulo0" name="articulo0" class="form-control"></td>
+                                            <td width="50%"><input type="text" id="articulo0" name="articulo0" class="form-control"></td>
                                             <td><input type="text" id="cantidad0" onkeyup="change_qty(0)" value="1" name="cantidad0" class="form-control"></td>
-                                            <td><input type="text" id="precio0" onkeyup="change_price(0)" name="precio0" class="form-control"></td>
-                                            <td><input type="text" id="total0" readonly="" name="total0" class="form-control"></td>
+                                            <td><input type="text" id="precio0" onkeyup="change_price(0)" value="0" name="precio0" class="form-control"></td>
+                                            <td><input type="text" id="total0" readonly="" name="total0" value="0" class="form-control"></td>
                                             <td data-tabullet-type="save"><button type="button" id="add_item" class="btn btn-success">Agregar</button></td>
                                             <td></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
-                                        <tr data-tabullet-id="-1">
+                                        <tr>
                                             <td></td>
                                             <td class="text-right"></td>
-                                            <td>Sub Total:<input type="text" id="sub_total" readonly="" name="sub_total"></td>
-                                            <td>IGV:<input type="text" id="igv" readonly="" name="igv"></td>
-                                            <td>Total General:<input type="text" id="precio_total" readonly="" name="precio_total"></td>
+                                            <td>Sub Total:<input type="text" id="sub_total" readonly="" name="sub_total" value="0.00"></td>
+                                            <td>IGV:<input type="text" id="igv" readonly="" name="igv" value="0.00"></td>
+                                            <td>Total General:<input type="text" id="precio_total" readonly="" name="precio_total" value="0.00"></td>
                                             <td></td>
                                             <td></td>
                                         </tr>

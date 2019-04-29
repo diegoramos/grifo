@@ -7,6 +7,10 @@ class Customers extends CI_Controller {
 	{
 		parent::__construct();
 		//Load Dependencies
+        if($this->session->userdata('user_id') <= 0 )
+        {
+            redirect('login');
+        }
 		$this->load->model('Sale');
 
 	}

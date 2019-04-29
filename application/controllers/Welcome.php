@@ -7,7 +7,10 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		//Load Dependencies
-		$this->load->library('ciqrcode');
+        if($this->session->userdata('user_id') <= 0 )
+        {
+            redirect('login');
+        }
 	}
 	/**
 	 * Index Page for this controller.
@@ -26,14 +29,6 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		//$this->load->view('welcome_message');
-
-		$params['data'] = '343434|fsfdsf|safkjd|342.8431dfdf|hf|7dttrt|dgtdfgdg|sd';
-		$params['level'] = 'H';
-		$params['size'] = 3;
-		$params['savename'] = FCPATH.'tes.png';
-		$data['qr'] = $this->ciqrcode->generate($params);
-		$this->load->view('html_to_pdf', $data, FALSE);
-		//echo '<img src="'.base_url().'tes.png" />';
+		$this->load->view('welcome_message');
 	}
 }

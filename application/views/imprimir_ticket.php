@@ -69,7 +69,7 @@
 	LIMA  CERCADO - LIMA - LIMA<br>
 	RUC: 20100625513		TELF.: 328-0381<br>
 	FACTURA ELECTRONICA<br>
-	FOO1-0016131</p>
+	<?php echo $info->nro; ?></p>
     <table>
         <tr>
             <td>Fecha/Hora:</td>
@@ -143,7 +143,7 @@
     EFECTIVO S/ : <?php echo $info->total; ?><br>
     Placa: <?php echo $info->placa; ?><br>
     Turno: <?php echo $info->tur; ?> Caja: <?php echo $info->caja; ?> Cajera: <?php echo $info->usu; ?></p>
-    <p class="text-center"><img src="<?= base_url() ?>uploads/tes.png" alt="QR-code" class="left"/></p>
+    <p class="text-center"><img src="<?php echo base_url() ?>uploads/<?php echo $info->nro.'.png';?>" alt="QR-code" class="left"/></p>
     <p class="text-center">REPRESENTACION IMPRESA DE LA<br>
 	FACTURA ELECTRONICA<br>
 	PODRA SER CONSULTADA EN:<br>
