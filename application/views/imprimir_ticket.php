@@ -20,7 +20,7 @@
         margin: 0;
         padding: 0;
         background-color: #FAFAFA;
-        font-size: 14px;
+        font-size: 12px;
         font-family: 'matricha';
         line-height: 100%;
 	    }
@@ -29,9 +29,9 @@
 	        -moz-box-sizing: border-box;
 	    }
 	    .page {
-	        width: 80mm;
+	        width: 70mm;
 	        min-height: 200mm;
-	        padding: 2mm;
+	        padding: 5mm;
 	        margin: 1mm auto;
 	        border: 1px #D3D3D3 solid;
 	        border-radius: 5px;
@@ -39,13 +39,16 @@
 	        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	    }
 	    .text-center{text-align: center;}
+        p {
+            margin: 0px;
+        }
 	    @page {
-            size: 3.14961in 7.87402in;
+            size: 2.95276in 7.87402in;
 	        margin: 0;
 	    }
 	    @media print {
         html, body {
-            width: 80mm;
+            width: 70mm;
             height: 200mm;        
         }
         .page {
@@ -76,7 +79,7 @@
 
 <div class="page">
     <p class="text-center">VAL TRADING S.A.C.<br>
-	JR.SEBASTIAN LORENTE 698 LIMA-CERCADO<br>
+	JR. SEBASTIAN LORENTE 698<br>
 	LIMA  CERCADO - LIMA - LIMA<br>
 	RUC: 20100625513		TELF.: 328-0381<br>
 	FACTURA ELECTRONICA<br>
