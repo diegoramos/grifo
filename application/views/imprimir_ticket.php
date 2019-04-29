@@ -29,9 +29,9 @@
 	        -moz-box-sizing: border-box;
 	    }
 	    .page {
-	        width: 70mm;
+	        width: 75mm;
 	        min-height: 200mm;
-	        padding: 5mm;
+	        padding: 7mm;
 	        margin: 1mm auto;
 	        border: 1px #D3D3D3 solid;
 	        border-radius: 5px;
@@ -48,7 +48,7 @@
 	    }
 	    @media print {
         html, body {
-            width: 70mm;
+            width: 75mm;
             height: 200mm;        
         }
         .page {
@@ -84,29 +84,11 @@
 	RUC: 20100625513		TELF.: 328-0381<br>
 	FACTURA ELECTRONICA<br>
 	<?php echo $info->nro; ?></p>
-    <table>
-        <tr>
-            <td>Fecha/Hora:</td>
-            <td><?php echo $info->fecha.' '.$info->hora; ?></td>
-        </tr>
-        <tr>
-            <td>Maq. Regist. No:</td>
-            <td><?php echo $info->maq; ?><br></td>
-        </tr>
-        <tr>
-            <td>NOMBRE:</td>
-            <td><?php echo $info->nom; ?></td>
-        </tr>
-        <tr>
-            <td>RUC:</td>
-            <td><?php echo $info->ruc; ?></td>
-        </tr>
-        <tr>
-            <td>DIRECC:</td>
-            <td><?php echo $info->dir; ?></td>
-        </tr>
-    </table>
-
+    <p>Fecha/Hora: <?php echo $info->fecha.' '.$info->hora; ?></p>
+    <p>Maq. Regist. No: <?php echo $info->maq; ?></p>
+    <p>NOMBRE: <?php echo $info->nom; ?></p>
+    <p>RUC&nbsp;&nbsp;&nbsp;: <?php echo $info->ruc; ?></p>
+    <p>DIRECC: <?php echo $info->dir; ?></p>
     <table>
         <tr>
             <td class="center">Descripción</td>
@@ -135,7 +117,7 @@
             <td>**** OP. GRAVADAS&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
-            <td class="right"><?php echo $info->sub; ?></td>
+            <td class="right"><?php echo $info->subtotal; ?></td>
         </tr>
         <tr>
             <td>**** IGV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
@@ -157,7 +139,7 @@
     EFECTIVO S/ : <?php echo $info->total; ?><br>
     Placa: <?php echo $info->placa; ?><br>
     Turno: <?php echo $info->tur; ?> Caja: <?php echo $info->caja; ?> Cajera: <?php echo $info->usu; ?></p>
-    <p class="text-center"><img src="<?php echo base_url() ?>uploads/<?php echo $info->nro.'.png';?>" alt="QR-code" class="left"/></p>
+    <p class="text-center"><img src="<?php echo base_url() ?>uploads/<?php echo $info->nro.'.png';?>" alt="QR-code" width="95" height="95" /></p>
     <p class="text-center">REPRESENTACION IMPRESA DE LA<br>
 	FACTURA ELECTRONICA<br>
 	PODRA SER CONSULTADA EN:<br>

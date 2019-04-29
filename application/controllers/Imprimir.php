@@ -31,7 +31,7 @@ class Imprimir extends CI_Controller {
 
 		$params['data'] = "'".$dataqr->ruc."|".$dataqr->nro."|".$dataqr->igv."|".$dataqr->total."|".$dataqr->fecha."'";
 		$params['level'] = 'H';
-		$params['size'] = 2;
+		$params['size'] = 3;
 		$params['savename'] = FCPATH.'uploads/'.$dataqr->nro.'.png';
 		$data['qr'] = $this->ciqrcode->generate($params);
 
@@ -49,7 +49,7 @@ class Imprimir extends CI_Controller {
 
 		$params['data'] = "'".$dataqr->ruc."|".$dataqr->nro."|".$dataqr->igv."|".$dataqr->total."|".$dataqr->fecha."'";
 		$params['level'] = 'H';
-		$params['size'] = 2;
+		$params['size'] = 3;
 		$params['savename'] = FCPATH.'uploads/'.$dataqr->nro.'.png';
 		$data['qr'] = $this->ciqrcode->generate($params);
 

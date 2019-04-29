@@ -16,7 +16,7 @@ class Imprime extends CI_Model {
 
 	public function get_print_id($id)
 	{
-		$this->db->select('*');
+		$this->db->select('*,salida.sub subtotal');
 		$this->db->from('salida');
 		$this->db->join('salida_detalle', 'salida.id = salida_detalle.salida', 'left');
 		$this->db->where('salida', $id);
