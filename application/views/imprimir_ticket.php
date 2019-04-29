@@ -5,21 +5,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Factura</title>
     <style>
+
+        @font-face {
+            font-family: 'TelidonRegular';
+            src: url('http://206.189.179.173/grifo/assets/fonts/TelidonRegular.ttf');
+            font-weight: normal;
+            font-style: normal;
+        }
+
 		body {
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         background-color: #FAFAFA;
-        font: 8pt 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;;
+        font-size: 15px;
+        font-family: 'TelidonRegular';
 	    }
 	    * {
 	        box-sizing: border-box;
 	        -moz-box-sizing: border-box;
 	    }
 	    .page {
-	        width: 70mm;
-	        min-height: 150mm;
+	        width: 80mm;
+	        min-height: 200mm;
 	        padding: 2mm;
 	        margin: 1mm auto;
 	        border: 1px #D3D3D3 solid;
@@ -29,13 +38,13 @@
 	    }
 	    .text-center{text-align: center;}
 	    @page {
-            size: 2.75591in 7.08661in;
+            size: 3.14961in 7.87402in;
 	        margin: 0;
 	    }
 	    @media print {
         html, body {
-            width: 70mm;
-            height: 150mm;        
+            width: 80mm;
+            height: 200mm;        
         }
         .page {
 	            margin: 0;
@@ -65,7 +74,7 @@
 
 <div class="page">
     <p class="text-center">VAL TRADING S.A.C.<br>
-	JR. SEBASTIAN LORENTE 698 LIMA - CERCADO<br>
+	JR.SEBASTIAN LORENTE 698 LIMA-CERCADO<br>
 	LIMA  CERCADO - LIMA - LIMA<br>
 	RUC: 20100625513		TELF.: 328-0381<br>
 	FACTURA ELECTRONICA<br>
@@ -118,19 +127,19 @@
             <td class="right">00</td>
         </tr>
         <tr>
-            <td>**** OP. GRAVADAS&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
+            <td>**** OP. GRAVADAS&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->sub; ?></td>
         </tr>
         <tr>
-            <td>**** IGV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
+            <td>**** IGV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->igv; ?></td>
         </tr>
         <tr>
-            <td>**** TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
+            <td>**** TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->total; ?></td>
