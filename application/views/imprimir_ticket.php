@@ -8,8 +8,8 @@
 
         @font-face {
             font-family: 'matricha';
-            /*src: url('http://206.189.179.173/grifo/assets/fonts/TelidonRegular.ttf');*/
-            src: url('http://localhost/grifo/assets/fonts/matricha.ttf');
+            src: url('http://206.189.179.173/grifo/assets/fonts/matricha.ttf.ttf');
+            /*src: url('http://localhost/grifo/assets/fonts/matricha.ttf');*/
             font-weight: normal;
             font-style: normal;
         }
