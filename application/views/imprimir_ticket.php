@@ -8,8 +8,8 @@
 
         @font-face {
             font-family: 'matricha';
-            src: url('http://206.189.179.173/grifo/assets/fonts/matricha.ttf');
-            /*src: url('http://localhost/grifo/assets/fonts/matricha.ttf');*/
+            /*src: url('http://206.189.179.173/grifo/assets/fonts/matricha.ttf');*/
+            src: url('http://localhost/grifo/assets/fonts/matricha.ttf');
             font-weight: normal;
             font-style: normal;
         }
@@ -22,7 +22,7 @@
         background-color: #FAFAFA;
         font-size: 12px;
         font-family: 'matricha';
-        line-height: 100%;
+        line-height: 95%;
 	    }
 	    * {
 	        box-sizing: border-box;
