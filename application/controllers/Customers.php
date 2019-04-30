@@ -39,7 +39,7 @@ class Customers extends CI_Controller {
 			$row[] = $customer->nom;
 			$row[] = $customer->usu;
 			//add html for action
-            $row[] = '<a class="btn btn-success" href="'.base_url().'imprimir/ver_pdf/'.$customer->id.'" target="_blank"><i class="sidebar-item-icon fa fa-download"></i> Descargar</a>
+            $row[] = '<a class="btn btn-success" onclick="imprimir_pdf(\''.$customer->id.'\')" target="_blank"><i class="sidebar-item-icon fa fa-download"></i> Descargar</a>
             	<a class="btn btn-primary" href="'.base_url().'imprimir/ver_html/'.$customer->id.'" target="_blank"><i class="sidebar-item-icon fa fa-print"></i> Imprimir</a>';
 
 
@@ -52,7 +52,7 @@ class Customers extends CI_Controller {
 						"recordsFiltered" => $this->Sale->count_filtered(),
 						"data" => $data,
 				);
-		//output to json format
+		//output to json format printJS(\''.base_url().'imprimir/ver_pdf/'.$customer->id.'\')
 		echo json_encode($output);
 
 	}

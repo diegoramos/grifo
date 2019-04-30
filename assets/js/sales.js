@@ -12,8 +12,8 @@ $(function() {
 	                        '<td><input type="text" style="display:none" id="cantidad'+INDEX_ROW+'" onkeyup="change_qty('+INDEX_ROW+')" name="cantidad[]" class="form-control show_input'+INDEX_ROW+'" value="'+(cantidad!=''?cantidad:1)+'"><span id="cantidad_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(cantidad!=''?cantidad:1)+'</span></td>'+
 	                        '<td><input type="text" style="display:none" id="precio'+INDEX_ROW+'" onkeyup="change_price('+INDEX_ROW+')" name="precio[]" class="form-control show_input'+INDEX_ROW+'" value="'+(precio!=''?precio:0)+'"><span id="precio_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(precio!=''?precio:0)+'</span></td>'+
 	                        '<td><input type="text" style="display:none" id="total'+INDEX_ROW+'" readonly="" name="total[]" class="form-control show_input'+INDEX_ROW+'" value="'+(total!=''?total:0)+'"><span id="total_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(total!=''?total:0)+'</span></td>'+
-	                        '<td data-tabullet-type="save"><button type="button" style="display:none" onClick="update_item('+INDEX_ROW+')" class="btn btn-success show_input'+INDEX_ROW+'">Save</button><button type="button" onClick="edit_item('+INDEX_ROW+')" class="btn btn-primary hide_span'+INDEX_ROW+'">Edit</button></td>'+
-	                        '<td><button type="button" onClick="delete_item('+INDEX_ROW+')" class="btn btn-danger">Eliminar</button></td>'+
+	                        '<td><button type="button" style="display:none" onClick="update_item('+INDEX_ROW+')" class="btn btn-success show_input'+INDEX_ROW+'">Save</button><button type="button" onClick="edit_item('+INDEX_ROW+')" class="btn btn-primary hide_span'+INDEX_ROW+'">Edit</button></td>'+
+	                        '<td><button type="button" onClick="delete_item('+INDEX_ROW+')" class="btn btn-danger">Delete</button></td>'+
 	                    '</tr>';
 		$('#table tbody').append(fila);
 		INDEX_ROW++;
@@ -26,36 +26,52 @@ $(function() {
 
 	$('#form_data').submit(function(e) {
 		e.preventDefault();
-		var formData = new FormData($('#form_data')[0]);
-		$.ajax({
-			url: base_url+'sales/add_sales',
-			type: 'POST',
-			dataType: 'json',
-			data: formData,
-			contentType:false,
-			processData:false,
 
-	        success: function(data)
-	        {
-	            if(data.status) //if success close modal and reload ajax table
-	            {
-	                $('#form_data')[0].reset();
-	            }
-	            else
-	            {
-				alert('Error');
-	            }
-	        },
-	        error: function (jqXHR, textStatus, errorThrown)
-	        {
-	            alert('Error adding / update data');
-	        }
+		if (validar()) {
+			var formData = new FormData($('#form_data')[0]);
+			$.ajax({
+				url: base_url+'sales/add_sales',
+				type: 'POST',
+				dataType: 'json',
+				data: formData,
+				contentType:false,
+				processData:false,
 
-		})
+		        success: function(data)
+		        {
+		            if(data.status) //if success close modal and reload ajax table
+		            {
+		                refresh();
+		            }
+		            else
+		            {
+					alert('Error');
+		            }
+		        },
+		        error: function (jqXHR, textStatus, errorThrown)
+		        {
+		            alert('Error adding / update data');
+		        }
+
+			})
+		}else{
+			alert('Debe agregar como minimo un item');
+		}
+		
 
 	});
 
+	$('#hora').timepicker();
     // Bootstrap datepicker
+    $('.form-control.fecha').datepicker({
+        format: 'yyyy-mm-dd',
+        todayBtn: "linked",
+        keyboardNavigation: false,
+        forceParse: false,
+        calendarWeeks: true,
+        autoclose: true,
+        language: 'es'
+    });
 
     $('.form-control.revision').datepicker({
         format: 'yyyy-mm-dd',
@@ -63,7 +79,8 @@ $(function() {
         keyboardNavigation: false,
         forceParse: false,
         calendarWeeks: true,
-        autoclose: true
+        autoclose: true,
+        orientation: 'bottom'
     });
 
     $('.form-control.cilindro').datepicker({
@@ -72,10 +89,19 @@ $(function() {
         keyboardNavigation: false,
         forceParse: false,
         calendarWeeks: true,
-        autoclose: true
+        autoclose: true,
+        orientation: 'bottom'
     });
 
 });
+
+function validar() {
+	var cont = 0;
+	$('input[name="total[]"]').each(function(index, el) {
+		cont ++;
+	});
+	return cont;
+}
 
 function refresh() {
 	document.location.href = base_url+"customers";

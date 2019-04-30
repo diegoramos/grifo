@@ -3540,3 +3540,5 @@ table.dataTable {
 tfoot tr td {
     font-size: 14px;
 }
+
+td > input  { width: 100px; }

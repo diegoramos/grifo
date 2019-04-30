@@ -45,7 +45,7 @@
                         <div class="form-group row">
                             <label class="col-sm-1 col-form-label">Fecha:</label>
                             <div class="col-sm-2">
-                                <input name="fecha" id="fecha" value="<?php echo date('Y-m-d');?>" class="form-control" type="text">
+                                <input name="fecha" id="fecha" value="<?php echo date('Y-m-d');?>" class="form-control fecha" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Hora:</label>
                             <div class="col-sm-2">
@@ -142,7 +142,7 @@
                                             <td><input type="text" id="precio0" onkeyup="change_price(0)" value="0" name="precio0" class="form-control"></td>
                                             <td><input type="text" id="total0" readonly="" name="total0" value="0" class="form-control"></td>
                                             <td data-tabullet-type="save"><button type="button" id="add_item" class="btn btn-success">Agregar</button></td>
-                                            <td></td>
+                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
@@ -163,7 +163,7 @@
                     <div class="ibox-footer text-center">
                         <div class="col-md-12 ml-sm-auto">
                             <a class="btn btn-default btn-lg" href="<?php echo base_url('sales');?>">Cancelar</a>
-                            <button type="submit" id="guardar" onclick="refresh()" class="btn btn-info btn-lg">Guardar</button>
+                            <button type="submit" id="guardar" class="btn btn-info btn-lg">Guardar</button>
                         </div>
                     </div>
                 </form>

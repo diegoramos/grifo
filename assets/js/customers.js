@@ -26,18 +26,15 @@ $('#customers-table').DataTable({
 })
 
 
-function imprimir_ticket(id) {
+function imprimir_pdf(id) {
     $.ajax({
-        url : base_url+'imprimir/ver_html/'+ id,
+        url : base_url+'imprimir/print_documento/'+id,
         type: "POST",
         dataType: "html",
         success: function(data)
         {
-            //if success reload ajax table
-            //$('#modal_print').modal('show');
-    $('.modal-body').load(base_url+'imprimir/ver_html/'+ id,function(){
-        $('#modal_print').modal({show:true});
-    });
+            $('#ipdf').html(data);
+            $('#modal_print').modal('show');
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -45,23 +42,3 @@ function imprimir_ticket(id) {
         }
     });
 }
-
-// function imprimir_pdf(id) {
-//     $.ajax({
-//         url : base_url+'imprimir/ver_pdf/'+ id+'pdf',
-//         type: "POST",
-//         dataType: "html",
-//         success: function(data)
-//         {
-//             //if success reload ajax table
-//             //$('#modal_print').modal('show');
-//     $('.modal-body').load(base_url+'imprimir/ver_html/'+ id+'pdf',function(){
-//         $('#modal_print').modal({show:true});
-//     });
-//         },
-//         error: function (jqXHR, textStatus, errorThrown)
-//         {
-//             alert('Error al imprimir');
-//         }
-//     });
-// }

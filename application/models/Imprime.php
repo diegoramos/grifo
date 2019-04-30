@@ -18,8 +18,8 @@ class Imprime extends CI_Model {
 	{
 		$this->db->select('*,salida.sub subtotal');
 		$this->db->from('salida');
-		$this->db->join('salida_detalle', 'salida.id = salida_detalle.salida', 'left');
-		$this->db->where('salida', $id);
+		//$this->db->join('salida_detalle', 'salida.id = salida_detalle.salida', 'left');
+		$this->db->where('id', $id);
 		$query = $this->db->get();
 
 		return $query->row();

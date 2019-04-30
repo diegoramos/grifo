@@ -25,14 +25,13 @@ class Imprimir extends CI_Controller {
 
 	public function ver_html($id)
 	{
-		$dataqr = $this->Imprime->get_print_id($id);
 		$data['info'] = $this->Imprime->get_print_id($id);
 		$data['items'] = $this->Imprime->get_print_detale_id($id);
 
-		$params['data'] = "'".$dataqr->ruc."|".$dataqr->nro."|".$dataqr->igv."|".$dataqr->total."|".$dataqr->fecha."'";
+		$params['data'] = "'".$data['info']->ruc."|".$data['info']->nro."|".$data['info']->igv."|".$data['info']->total."|".$data['info']->fecha."'";
 		$params['level'] = 'H';
 		$params['size'] = 3;
-		$params['savename'] = FCPATH.'uploads/'.$dataqr->nro.'.png';
+		$params['savename'] = FCPATH.'uploads/'.$data['info']->nro.'.png';
 		$data['qr'] = $this->ciqrcode->generate($params);
 
 		$this->load->view('imprimir_ticket', $data, FALSE);
@@ -60,6 +59,21 @@ class Imprimir extends CI_Controller {
         $mpdf->Output();
 
 	}
+
+	function print_documento($id){
+	       echo  '<div class="button-group">
+	          <a href="#" class="btn btn-success" onclick="printJS(\''.base_url().'imprimir/ver_pdf/'.$id.'\')">
+	            IMPRIMIR
+	          </a>
+	          <a class="btn btn-primary" target="_blank" href="'.base_url().'imprimir/ver_pdf/'.$id.'">Abrir en navegador</a>
+	          <a class="btn btn-secondary" data-dismiss="modal">Cerrar</a>
+	        </div>
+	        <br>
+	        <iframe src="'.base_url().'imprimir/ver_pdf/'.$id.'" width="100%" height="400" frameborder="none">
+
+	        </iframe>';
+
+	    }
 
 }
 
