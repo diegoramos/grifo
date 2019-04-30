@@ -16,12 +16,17 @@
                     <li class="heading">FEATURES</li>
                     <li>
                         <a href="<?php echo base_url() ?>sales"><i class="sidebar-item-icon fa fa-shopping-cart"></i>
-                            <span class="nav-label">VENTA</span>
+                            <span class="nav-label">VENTAS</span>
                         </a>
                     </li>
                     <li>
                         <a href="<?php echo base_url() ?>customers"><i class="sidebar-item-icon fa fa-users"></i>
                             <span class="nav-label">CLIENTES</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url() ?>users"><i class="sidebar-item-icon fa fa-user"></i>
+                            <span class="nav-label">USUARIOS</span>
                         </a>
                     </li>
                 </ul>

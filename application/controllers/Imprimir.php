@@ -42,13 +42,10 @@ class Imprimir extends CI_Controller {
 		$data['info'] = $this->Imprime->get_print_id($id);
 		$data['items'] = $this->Imprime->get_print_detale_id($id);
 
-		$data['info'] = $this->Imprime->get_print_id($id);
-		$data['items'] = $this->Imprime->get_print_detale_id($id);
-
 		$params['data'] = "'".$data['info']->ruc."|".$data['info']->nro."|".$data['info']->igv."|".$data['info']->total."|".$data['info']->fecha."'";
 		$params['level'] = 'H';
 		$params['size'] = 3;
-		$params['savename'] = FCPATH.'uploads/'.$dataqr->nro.'.png';
+		$params['savename'] = FCPATH.'uploads/'.$data['info']->nro.'.png';
 		$data['qr'] = $this->ciqrcode->generate($params);
 
         $mpdf = new \Mpdf\Mpdf(['format' => [80, 180]]);

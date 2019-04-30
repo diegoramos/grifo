@@ -41,8 +41,6 @@ class Customers extends CI_Controller {
 			//add html for action
             $row[] = '<a class="btn btn-success" onclick="imprimir_pdf(\''.$customer->id.'\')" target="_blank"><i class="sidebar-item-icon fa fa-download"></i> Descargar</a>
             	<a class="btn btn-primary" href="'.base_url().'imprimir/ver_html/'.$customer->id.'" target="_blank"><i class="sidebar-item-icon fa fa-print"></i> Imprimir</a>';
-
-
 			$data[] = $row;
 		}
 

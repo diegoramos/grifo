@@ -37,6 +37,9 @@
     <?php if ($this->uri->segment(1) == 'sales'): ?>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/sales.js"></script>
     <?php endif ?>
+    <?php if ($this->uri->segment(1) == 'users'): ?>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/users.js"></script>
+    <?php endif ?>
 </body>
 
 </html>

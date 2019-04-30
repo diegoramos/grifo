@@ -108,11 +108,11 @@
                                 <input name="nom" id="nom" class="form-control" type="text" required="">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Ruc:</label>
-                            <div class="col-sm-3">
-                                <input name="ruc" id="nombre_ruc" class="form-control" type="text">
+                            <div class="col-sm-2">
+                                <input name="ruc" id="ruc" class="form-control" type="text" required="">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Dirección:</label>
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <input name="dir"  id="dir" class="form-control" type="text">
                             </div>
                         </div>

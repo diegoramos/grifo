@@ -1,20 +1,19 @@
 var INDEX_ROW=1;
 $(function() {
-	
 	$('#add_item').click(function(e) {
 		var articulo = $('input[name="articulo0"]').val();
 		var cantidad = $('input[name="cantidad0"]').val();
 		var precio = $('input[name="precio0"]').val();
 		var total = $('input[name="total0"]').val();
 		var fila = '<tr class="fila'+INDEX_ROW+'">'+
-	                        '<td></td>'+
-	                        '<td width="50%"><input type="text" style="display:none" id="articulo'+INDEX_ROW+'" name="articulo[]" class="form-control show_input'+INDEX_ROW+'" value="'+(articulo!=''?articulo:'Default')+'"><span id="articulo_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(articulo!=''?articulo:'Default')+'</span></td>'+
-	                        '<td><input type="text" style="display:none" id="cantidad'+INDEX_ROW+'" onkeyup="change_qty('+INDEX_ROW+')" name="cantidad[]" class="form-control show_input'+INDEX_ROW+'" value="'+(cantidad!=''?cantidad:1)+'"><span id="cantidad_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(cantidad!=''?cantidad:1)+'</span></td>'+
-	                        '<td><input type="text" style="display:none" id="precio'+INDEX_ROW+'" onkeyup="change_price('+INDEX_ROW+')" name="precio[]" class="form-control show_input'+INDEX_ROW+'" value="'+(precio!=''?precio:0)+'"><span id="precio_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(precio!=''?precio:0)+'</span></td>'+
-	                        '<td><input type="text" style="display:none" id="total'+INDEX_ROW+'" readonly="" name="total[]" class="form-control show_input'+INDEX_ROW+'" value="'+(total!=''?total:0)+'"><span id="total_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(total!=''?total:0)+'</span></td>'+
-	                        '<td><button type="button" style="display:none" onClick="update_item('+INDEX_ROW+')" class="btn btn-success show_input'+INDEX_ROW+'">Save</button><button type="button" onClick="edit_item('+INDEX_ROW+')" class="btn btn-primary hide_span'+INDEX_ROW+'">Edit</button></td>'+
-	                        '<td><button type="button" onClick="delete_item('+INDEX_ROW+')" class="btn btn-danger">Delete</button></td>'+
-	                    '</tr>';
+                        '<td></td>'+
+                        '<td width="50%"><input type="text" style="display:none" id="articulo'+INDEX_ROW+'" name="articulo[]" class="form-control show_input'+INDEX_ROW+'" value="'+(articulo!=''?articulo:'Default')+'"><span id="articulo_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(articulo!=''?articulo:'Default')+'</span></td>'+
+                        '<td><input type="text" style="display:none" id="cantidad'+INDEX_ROW+'" onkeyup="change_qty('+INDEX_ROW+')" name="cantidad[]" class="form-control show_input'+INDEX_ROW+'" value="'+(cantidad!=''?cantidad:1)+'"><span id="cantidad_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(cantidad!=''?cantidad:1)+'</span></td>'+
+                        '<td><input type="text" style="display:none" id="precio'+INDEX_ROW+'" onkeyup="change_price('+INDEX_ROW+')" name="precio[]" class="form-control show_input'+INDEX_ROW+'" value="'+(precio!=''?precio:0)+'"><span id="precio_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(precio!=''?precio:0)+'</span></td>'+
+                        '<td><input type="text" style="display:none" id="total'+INDEX_ROW+'" readonly="" name="total[]" class="form-control show_input'+INDEX_ROW+'" value="'+(total!=''?total:0)+'"><span id="total_s'+INDEX_ROW+'" class="hide_span'+INDEX_ROW+'">'+(total!=''?total:0)+'</span></td>'+
+                        '<td><button type="button" style="display:none" onClick="update_item('+INDEX_ROW+')" class="btn btn-success show_input'+INDEX_ROW+'">Save</button><button type="button" onClick="edit_item('+INDEX_ROW+')" class="btn btn-primary hide_span'+INDEX_ROW+'">Edit</button></td>'+
+                        '<td><button type="button" onClick="delete_item('+INDEX_ROW+')" class="btn btn-danger">Delete</button></td>'+
+	                '</tr>';
 		$('#table tbody').append(fila);
 		INDEX_ROW++;
 		calcular_total();
@@ -52,13 +51,10 @@ $(function() {
 		        {
 		            alert('Error adding / update data');
 		        }
-
 			})
 		}else{
 			alert('Debe agregar como minimo un item');
 		}
-		
-
 	});
 
 	$('#hora').timepicker();
@@ -92,6 +88,26 @@ $(function() {
         autoclose: true,
         orientation: 'bottom'
     });
+
+    var elements = document.getElementsByTagName("INPUT");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function (e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                switch (e.srcElement.id) {
+                    case "nom":
+                        e.target.setCustomValidity("Cliente es requerido");
+                        break;
+                    case "ruc":
+                        e.target.setCustomValidity("RUC es requerido");
+                        break;
+                }
+            }
+        };
+        elements[i].oninput = function (e) {
+            e.target.setCustomValidity("");
+        };
+    }
 
 });
 
