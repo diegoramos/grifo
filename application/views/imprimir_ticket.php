@@ -7,9 +7,7 @@
     <style>
 
         @font-face {
-            font-family: 'matricha';
-            src: url('http://206.189.179.173/grifo/assets/fonts/matricha.ttf');
-            /*src: url('http://localhost/grifo/assets/fonts/matricha.ttf');*/
+            font-family: 'simsun';
             font-weight: normal;
             font-style: normal;
         }
@@ -20,18 +18,20 @@
         margin: 0;
         padding: 0;
         background-color: #FAFAFA;
-        font-size: 12px;
-        font-family: 'matricha';
-        line-height: 95%;
+        font-size: 11px;
+        font-family: 'simsun';
+        line-height: 109%;
 	    }
 	    * {
 	        box-sizing: border-box;
 	        -moz-box-sizing: border-box;
 	    }
 	    .page {
-	        width: 75mm;
+	        width: 68mm;
 	        min-height: 200mm;
-	        padding: 7mm;
+            padding-top: 10mm;
+            padding-left: 0.9mm;
+            padding-right: 2mm;
 	        margin: 1mm auto;
 	        border: 1px #D3D3D3 solid;
 	        border-radius: 5px;
@@ -39,16 +39,22 @@
 	        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	    }
 	    .text-center{text-align: center;}
+        .abajo{
+            margin-top: -7px;
+        }
+        .titulo{
+            letter-spacing: 0.4px;
+        }
         p {
             margin: 0px;
         }
 	    @page {
-            size: 2.95276in 7.87402in;
+            size: 3.14961in 7.87402in;
 	        margin: 0;
 	    }
 	    @media print {
         html, body {
-            width: 75mm;
+            width: 68mm;
             height: 200mm;        
         }
         .page {
@@ -72,22 +78,25 @@
 	.center{
 		text-align: center;
 	}
-
     </style>
 </head>
+<?php
+    $originalDate = $info->fecha;
+    $newDate = date("d/m/Y", strtotime($originalDate));
+?>
 <body onload="window.print();">
 <div class="page">
-    <p class="text-center">VAL TRADING S.A.C.<br>
-	JR. SEBASTIAN LORENTE 698<br>
-	LIMA  CERCADO - LIMA - LIMA<br>
-	RUC: 20100625513		TELF.: 328-0381<br>
-	FACTURA ELECTRONICA<br>
-	<?php echo $info->nro; ?></p>
-    <p>Fecha/Hora: <?php echo $info->fecha.' '.$info->hora; ?></p>
+    <p class="titulo"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VAL TRADING S.A.C.<p>
+	<p>JR. &nbsp;SEBASTIAN LORENTE 698 LIMA - CERCADO</p>
+	<p class="titulo">&nbsp;&nbsp;&nbsp;&nbsp;LIMA  CERCADO - LIMA - LIMA</p>
+	<p>RUC: 20100625513&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TELF.: &nbsp;328-0381</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FACTURA ELECTRONICA</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $info->nro; ?></p>
+    <p>Fecha/Hora: <?php echo $newDate.' '.$info->hora; ?></p>
     <p>Maq. Regist. No: <?php echo $info->maq; ?></p>
-    <p>NOMBRE: <?php echo $info->nom; ?></p>
-    <p>RUC&nbsp;&nbsp;&nbsp;: <?php echo $info->ruc; ?></p>
-    <p>DIRECC: <?php echo $info->dir; ?></p>
+    <p>NOMBRE&nbsp;:<?php echo $info->nom; ?></p>
+    <p>RUC &nbsp;&nbsp;:<?php echo $info->ruc; ?></p>
+    <p>DIRECC&nbsp;:<?php echo $info->dir; ?></p>
     <table>
         <tr>
             <td class="center">Descripción</td>
@@ -110,36 +119,37 @@
             <td>**** OP. EXONERADA S/</td>
             <td></td>
             <td></td>
-            <td class="right">00</td>
+            <td class="right">0.00</td>
         </tr>
         <tr>
-            <td>**** OP. GRAVADAS&nbsp;&nbsp;S/</td>
+            <td>**** OP. GRAVADAS&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->subtotal; ?></td>
         </tr>
         <tr>
-            <td>**** IGV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
+            <td>**** IGV &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->igv; ?></td>
         </tr>
         <tr>
-            <td>**** TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S/</td>
+            <td>**** TOTAL &nbsp;&nbsp;&nbsp;&nbsp;S/</td>
             <td></td>
             <td></td>
             <td class="right"><?php echo $info->total; ?></td>
         </tr>
     </table>
     <?php $this->load->helper('number'); ?>
-    <p>SON: <?php
+    <p>Son: <?php
     $exchange_name = "SOLES";
-    echo num_to_letras($info->total,"Y",letra_modena($exchange_name)); ?><br>
-    EFECTIVO S/ : <?php echo $info->total; ?><br>
+    echo num_to_letras($info->total,"CON",letra_modena($exchange_name)); ?><br>
+    EFECTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S/ &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info->total; ?><br>
     Placa: <?php echo $info->placa; ?><br>
     Turno: <?php echo $info->tur; ?> Caja: <?php echo $info->caja; ?> Cajera: <?php echo $info->usu; ?></p>
-    <p class="text-center"><img src="<?php echo base_url() ?>uploads/<?php echo $info->nro.'.png';?>" alt="QR-code" width="95" height="95" /></p>
-    <p class="text-center">REPRESENTACION IMPRESA DE LA<br>
+    <br>
+    <p class="text-center"><img src="<?php echo base_url() ?>uploads/<?php echo $info->nro.'.png';?>" alt="QR-code" width="111" height="111" /></p>
+    <p class="text-center abajo">REPRESENTACION IMPRESA DE LA<br>
 	FACTURA ELECTRONICA<br>
 	PODRA SER CONSULTADA EN:<br>
 	http://www.cpe.netfacturas.com/<br>

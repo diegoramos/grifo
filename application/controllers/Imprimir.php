@@ -33,8 +33,11 @@ class Imprimir extends CI_Controller {
 		$params['size'] = 3;
 		$params['savename'] = FCPATH.'uploads/'.$data['info']->nro.'.png';
 		$data['qr'] = $this->ciqrcode->generate($params);
-
-		$this->load->view('imprimir_ticket', $data, FALSE);
+		if ($data['info']->emp == 'GRIFOS DIANA SAC') {
+			$this->load->view('imprimir_ticket', $data, FALSE);
+		}else{
+			$this->load->view('imprimir_paso', $data, FALSE);
+		}
 	}
 
 	public function ver_pdf($id)
@@ -48,8 +51,13 @@ class Imprimir extends CI_Controller {
 		$params['savename'] = FCPATH.'uploads/'.$data['info']->nro.'.png';
 		$data['qr'] = $this->ciqrcode->generate($params);
 
-        $mpdf = new \Mpdf\Mpdf(['format' => [80, 180]]);
-        $html = $this->load->view('imprimir_ticket',$data, true);
+        $mpdf = new \Mpdf\Mpdf(['format' => [80, 200]]);
+        if ($data['info']->emp == 'GRIFOS DIANA SAC') {
+        	$html = $this->load->view('imprimir_ticket',$data, true);
+        }else{
+        	$html = $this->load->view('imprimir_paso',$data, true);
+        }
+        
         $mpdf->SetDisplayMode('fullpage');
         $mpdf->WriteHTML($html);
         $mpdf->Output();

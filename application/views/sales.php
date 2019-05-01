@@ -24,22 +24,19 @@
                     <div class="ibox-body">
                         <div class="form-group row">
                             <label class="col-sm-1 col-form-label">Empresa:</label>
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <select name="emp" id="emp" class="form-control select2_demo_1">
                                     <option value="GRIFOS DIANA SAC">GRIFOS DIANA SAC</option>
+                                    <option value="PASO DE LOS ANDES SAC">ESTACION DE SERVICIOS PASO DE LOS ANDES SAC</option>
                                 </select>
                             </div>
                             <label class="col-sm-2 col-form-label text-right">Ticket Nro:</label>
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <input name="nro" id="nro" class="form-control" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Nro2:</label>
-                            <div class="col-sm-1">
+                            <div class="col-sm-2">
                                 <input name="nro2" id="nro2" class="form-control" type="text">
-                            </div>
-                            <label class="col-sm-2 col-form-label text-right">N Transaccion:</label>
-                            <div class="col-sm-1">
-                                <input name="nro3" id="nr3" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -51,11 +48,14 @@
                             <div class="col-sm-2">
                                 <input name="hora" id="hora" value="<?php echo date('H:i:s');?>" class="form-control" type="text">
                             </div>
-                            <label class="col-sm-1 col-form-label">Recibo:</label>
+                            <label class="col-sm-1 col-form-label text-right">Recibo:</label>
                             <div class="col-sm-2">
                                 <input name="recibo" id="recibo" class="form-control" type="text">
                             </div>
-
+                            <label class="col-sm-2 col-form-label text-right text-right">N Transaccion:</label>
+                            <div class="col-sm-1">
+                                <input name="nro3" id="nr3" class="form-control" type="text">
+                            </div>
                         </div>
 
                         <div class="form-group row">
@@ -64,11 +64,11 @@
                                 <input name="usu" id="usu" class="form-control" value="<?php echo $this->session->userdata('first_name'); ?>" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Turno:</label>
-                            <div class="col-sm-2">
+                            <div class="col-sm-1">
                                 <input name="tur" id="tur" class="form-control" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Isla:</label>
-                            <div class="col-sm-1">
+                            <div class="col-sm-2">
                                 <input name="maq" id="maq" class="form-control" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Caja:</label>
