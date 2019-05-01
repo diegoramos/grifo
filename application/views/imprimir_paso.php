@@ -30,7 +30,7 @@
 	    .page {
 	        width: 70mm;
 	        min-height: 200mm;
-            padding-top: 10mm;
+            padding-top: 8mm;
 	        padding-left: 8mm;
             padding-right: 1mm;
 	        margin: 1mm auto;
@@ -148,7 +148,7 @@
     <?php } ?>
     <hr>
     <p class="otro-size"><strong>**** OP. GRAVADAS...S/ &nbsp;&nbsp;&nbsp; <?php echo $info->subtotal; ?></strong></p>
-    <p class="otro-size"><strong>**** IGV ..........S/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $info->igv; ?></strong></p>
+    <p class="otro-size"><strong>**** IGV...........S/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $info->igv; ?></strong></p>
     <p class="otro-size"><strong>**** IMPORTE TOTAL.S/ &nbsp;&nbsp;&nbsp; <?php echo $info->total; ?></strong></p>
     <P class="text-center pagar"><strong>TOTAL A PAGAR: S/ <?php echo $info->total; ?></strong></P>
     <?php $this->load->helper('number'); ?>
