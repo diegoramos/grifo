@@ -20,7 +20,7 @@ class Imprimir extends CI_Controller {
 	// List all your items
 	public function index( $offset = 0 )
 	{
-		echo "Errpr al acceder";
+		echo "Error al acceder";
 	}
 
 	public function ver_html($id)
