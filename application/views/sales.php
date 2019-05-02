@@ -20,14 +20,14 @@
                     </div>
                 </div>
                 
-                <form id="form_data" class="form-horizontal">
+                <form id="form_data" class="form-horizontal" autocomplete="on">
                     <div class="ibox-body">
                         <div class="form-group row">
                             <label class="col-sm-1 col-form-label">Empresa:</label>
                             <div class="col-sm-3">
-                                <select name="emp" id="emp" class="form-control select2_demo_1">
-                                    <option value="GRIFOS DIANA SAC">GRIFOS DIANA SAC</option>
-                                    <option value="PASO DE LOS ANDES SAC">ESTACION DE SERVICIOS PASO DE LOS ANDES SAC</option>
+                                <select name="emp" id="emp" class="form-control">
+                                    <option value="VAL TRADING SAC">VAL TRADING SAC</option>
+                                    <option value="PASO DE LOS ANDES SAC">PASO DE LOS ANDES SAC</option>
                                 </select>
                             </div>
                             <label class="col-sm-2 col-form-label text-right">Ticket Nro:</label>
@@ -42,11 +42,11 @@
                         <div class="form-group row">
                             <label class="col-sm-1 col-form-label">Fecha:</label>
                             <div class="col-sm-2">
-                                <input name="fecha" id="fecha" value="<?php echo date('Y-m-d');?>" class="form-control fecha" type="text">
+                                <input name="fecha" class="form-control fecha" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Hora:</label>
                             <div class="col-sm-2">
-                                <input name="hora" id="hora" value="<?php echo date('H:i:s');?>" class="form-control" type="text">
+                                <input name="hora" class="form-control" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Recibo:</label>
                             <div class="col-sm-2">
@@ -61,7 +61,7 @@
                         <div class="form-group row">
                             <label class="col-sm-1 col-form-label">Usuario:</label>
                             <div class="col-sm-2">
-                                <input name="usu" id="usu" class="form-control" value="<?php echo $this->session->userdata('first_name'); ?>" type="text">
+                                <input name="usu" id="usu" class="form-control" type="text">
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Turno:</label>
                             <div class="col-sm-1">
@@ -69,7 +69,10 @@
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Isla:</label>
                             <div class="col-sm-2">
-                                <input name="maq" id="maq" class="form-control" type="text">
+                                <select name="maq" id="maq" class="form-control">
+                                    <option value="50131041">VAL TRADING SAC</option>
+                                    <option value="TC6Y356743">PASO DE LOS ANDES SAC</option>
+                                </select>
                             </div>
                             <label class="col-sm-1 col-form-label text-right">Caja:</label>
                             <div class="col-sm-1">
@@ -119,7 +122,6 @@
 
                         <h5 class="m-t-10 m-b-10 font-strong">ARTICULOS</h5>
 
-
                         <div class="content-process">
                             <div class="col-sm-12">
                                 <table class="table table-hover" id="table">
@@ -137,21 +139,21 @@
                                     <tbody>
                                         <tr>
                                             <td></td>
-                                            <td width="50%"><input type="text" id="articulo0" name="articulo0" class="form-control"></td>
+                                            <td width="50%"><input type="text" id="articulo0" name="articulo0" class="form-control" autocomplete="on"></td>
                                             <td><input type="text" id="cantidad0" onkeyup="change_qty(0)" value="1" name="cantidad0" class="form-control"></td>
                                             <td><input type="text" id="precio0" onkeyup="change_price(0)" value="0" name="precio0" class="form-control"></td>
                                             <td><input type="text" id="total0" readonly="" name="total0" value="0" class="form-control"></td>
                                             <td data-tabullet-type="save"><button type="button" id="add_item" class="btn btn-success">Agregar</button></td>
-                                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                            <td></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <td></td>
                                             <td class="text-right"></td>
-                                            <td>Sub Total:<input type="text" id="sub_total" readonly="" name="sub_total" value="0.00"></td>
-                                            <td>IGV:<input type="text" id="igv" readonly="" name="igv" value="0.00"></td>
-                                            <td>Total General:<input type="text" id="precio_total" readonly="" name="precio_total" value="0.00"></td>
+                                            <td>Sub Total:<input type="text" id="sub_total" name="sub_total" value="0.00"></td>
+                                            <td>IGV:<input type="text" id="igv" name="igv" value="0.00"></td>
+                                            <td>Total General:<input type="text" id="precio_total" name="precio_total" value="0.00"></td>
                                             <td></td>
                                             <td></td>
                                         </tr>

@@ -57,9 +57,9 @@ $(function() {
 		}
 	});
 
-	$('#hora').timepicker();
+	$('#hora_xx').timepicker();
     // Bootstrap datepicker
-    $('.form-control.fecha').datepicker({
+    $('.form-control.fecha_xx').datepicker({
         format: 'yyyy-mm-dd',
         todayBtn: "linked",
         keyboardNavigation: false,
@@ -69,7 +69,7 @@ $(function() {
         language: 'es'
     });
 
-    $('.form-control.revision').datepicker({
+    $('.form-control.revision_xx').datepicker({
         format: 'yyyy-mm-dd',
         todayBtn: "linked",
         keyboardNavigation: false,
@@ -79,7 +79,7 @@ $(function() {
         orientation: 'bottom'
     });
 
-    $('.form-control.cilindro').datepicker({
+    $('.form-control.cilindro_xx').datepicker({
         format: 'yyyy-mm-dd',
         todayBtn: "linked",
         keyboardNavigation: false,

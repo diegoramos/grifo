@@ -30,7 +30,7 @@
 	    .page {
 	        width: 70mm;
 	        min-height: 200mm;
-            padding-top: 8mm;
+            padding-top: 17mm;
 	        padding-left: 8mm;
             padding-right: 1mm;
 	        margin: 1mm auto;

@@ -33,7 +33,7 @@ class Imprimir extends CI_Controller {
 		$params['size'] = 3;
 		$params['savename'] = FCPATH.'uploads/'.$data['info']->nro.'.png';
 		$data['qr'] = $this->ciqrcode->generate($params);
-		if ($data['info']->emp == 'GRIFOS DIANA SAC') {
+		if ($data['info']->emp == 'VAL TRADING SAC') {
 			$this->load->view('imprimir_ticket', $data, FALSE);
 		}else{
 			$this->load->view('imprimir_paso', $data, FALSE);
@@ -52,7 +52,7 @@ class Imprimir extends CI_Controller {
 		$data['qr'] = $this->ciqrcode->generate($params);
 
         $mpdf = new \Mpdf\Mpdf(['format' => [80, 200]]);
-        if ($data['info']->emp == 'GRIFOS DIANA SAC') {
+        if ($data['info']->emp == 'VAL TRADING SAC') {
         	$html = $this->load->view('imprimir_ticket',$data, true);
         }else{
         	$html = $this->load->view('imprimir_paso',$data, true);

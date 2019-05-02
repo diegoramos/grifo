@@ -20,7 +20,8 @@
         background-color: #FAFAFA;
         font-size: 11px;
         font-family: 'simsun';
-        line-height: 109%;
+        line-height: 100%;
+        letter-spacing: 0.1px;
 	    }
 	    * {
 	        box-sizing: border-box;
@@ -29,8 +30,8 @@
 	    .page {
 	        width: 68mm;
 	        min-height: 200mm;
-            padding-top: 10mm;
-            padding-left: 0.9mm;
+            padding-top: 18mm;
+            padding-left: 1mm;
             padding-right: 2mm;
 	        margin: 1mm auto;
 	        border: 1px #D3D3D3 solid;
@@ -43,7 +44,48 @@
             margin-top: -7px;
         }
         .titulo{
-            letter-spacing: 0.4px;
+            letter-spacing: 0.5px;
+            font-size: 11.5px;
+            padding-left: 2px;
+        }
+        .direccion{
+            padding-top: 0px;
+            padding-bottom: 0px;
+            letter-spacing: 0.5px;
+        }
+        .direccion2{
+            padding-left: 2px;
+            letter-spacing: 0.5px;
+        }
+        .cabeceraitem{
+            padding-left: 25px;
+        }
+        .items{
+            padding-left: 3px;
+        }
+        .cantidad{
+            padding-left: 0px;
+        }
+        .factura{
+            padding-left: 6px;
+            line-height: 110%;
+            letter-spacing: 0.5px;
+        }
+        .numero{
+            line-height: 110%;
+            letter-spacing: 0.5px;
+        }
+        .fecha{
+            letter-spacing: 0.6px;
+        }
+        .separacion{
+            letter-spacing: 0.5px;
+        }
+        .nombre{
+            letter-spacing: 0.6px;
+        }
+        .texto-qr{
+            padding-left: 80px;
         }
         p {
             margin: 0px;
@@ -86,34 +128,21 @@
 ?>
 <body onload="window.print();">
 <div class="page">
-    <p class="titulo"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VAL TRADING S.A.C.<p>
-	<p>JR. &nbsp;SEBASTIAN LORENTE 698 LIMA - CERCADO</p>
-	<p class="titulo">&nbsp;&nbsp;&nbsp;&nbsp;LIMA  CERCADO - LIMA - LIMA</p>
-	<p>RUC: 20100625513&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TELF.: &nbsp;328-0381</p>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FACTURA ELECTRONICA</p>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $info->nro; ?></p>
-    <p>Fecha/Hora: <?php echo $newDate.' '.$info->hora; ?></p>
-    <p>Maq. Regist. No: <?php echo $info->maq; ?></p>
-    <p>NOMBRE&nbsp;:<?php echo $info->nom; ?></p>
+    <p class="titulo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VAL TRADING S.A.C.<p>
+	<p class="direccion">JR. SEBASTIAN LORENTE 698 LIMA -CERCADO</p>
+	<p class="direccion2">&nbsp;&nbsp;&nbsp;LIMA  CERCADO -&nbsp;LIMA -&nbsp;LIMA</p>
+	<p class="separacion">RUC: 20100625513&nbsp;&nbsp;&nbsp;TELF.: &nbsp;328-0381</p>
+	<p class="factura">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FACTURA ELECTRONICA</p>
+	<p class="numero"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info->nro; ?></p>
+    <p class="fecha">Fecha/Hora: <?php echo $newDate.' '.$info->hora; ?></p>
+    <p class="maquina">Maq. Regist. No: <?php echo $info->maq; ?></p>
+    <p class="nombre">NOMBRE :<?php echo $info->nom; ?></p>
     <p>RUC &nbsp;&nbsp;:<?php echo $info->ruc; ?></p>
     <p>DIRECC&nbsp;:<?php echo $info->dir; ?></p>
-    <table>
-        <tr>
-            <td class="center">Descripción</td>
-            <td>Cant</td>
-            <td>P.U.</td>
-            <td class="right">Pre Tot</td>
-        </tr>
-        <?php foreach ($items as $value) { ?>
-        <tr>
-            <td><?php echo $value->prod; ?></td>
-            <td><?php echo $value->cantidad; ?></td>
-            <td><?php echo $value->precio; ?></td>
-            <td class="right"><?php echo $value->sub; ?></td>
-        </tr>
-        <?php } ?>
-    </table>
-
+    <p class="cabeceraitem">Descripción &nbsp; Cant. &nbsp; P.U. &nbsp;  Pre Tot</p>
+    <?php foreach ($items as $value) { ?>
+    <p class="items"><?php echo $value->prod.' &nbsp;'.$value->cantidad.' &nbsp; '.$value->precio.'&nbsp; '.$value->sub; ?></p>
+    <?php } ?>
     <table>
         <tr>
             <td>**** OP. EXONERADA S/</td>
@@ -141,14 +170,14 @@
         </tr>
     </table>
     <?php $this->load->helper('number'); ?>
-    <p>Son: <?php
+    <p class="separacion">Son: <?php
     $exchange_name = "SOLES";
-    echo num_to_letras($info->total,"CON",letra_modena($exchange_name)); ?><br>
-    EFECTIVO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S/ &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info->total; ?><br>
+    echo num_to_letras($info->total,"CON",letra_modena($exchange_name)); ?></p>
+    <p>EFECTIVO &nbsp;&nbsp;&nbsp;&nbsp; S/ &nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info->total; ?><br>
     Placa: <?php echo $info->placa; ?><br>
     Turno: <?php echo $info->tur; ?> Caja: <?php echo $info->caja; ?> Cajera: <?php echo $info->usu; ?></p>
     <br>
-    <p class="text-center"><img src="<?php echo base_url() ?>uploads/<?php echo $info->nro.'.png';?>" alt="QR-code" width="111" height="111" /></p>
+    <p class="texto-qr"><img src="<?php echo base_url() ?>uploads/<?php echo $info->nro.'.png';?>" lt="QR-code" width="111" height="111" /></p>
     <p class="text-center abajo">REPRESENTACION IMPRESA DE LA<br>
 	FACTURA ELECTRONICA<br>
 	PODRA SER CONSULTADA EN:<br>
