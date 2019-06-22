@@ -107,7 +107,6 @@
 	            min-height: initial;
 	            box-shadow: initial;
 	            background: initial;
-	            page-break-after: always;
         	}
     	}
 	table{
@@ -135,14 +134,27 @@
 	<p class="factura">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FACTURA ELECTRONICA</p>
 	<p class="numero"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $info->nro; ?></p>
     <p class="fecha">Fecha/Hora: <?php echo $newDate.' '.$info->hora; ?></p>
-    <p class="maquina">Maq. Regist. No: <?php echo $info->maq; ?></p>
+    <p class="maquina">50131041</p>
     <p class="nombre">NOMBRE :<?php echo $info->nom; ?></p>
     <p>RUC &nbsp;&nbsp;:<?php echo $info->ruc; ?></p>
     <p>DIRECC&nbsp;:<?php echo $info->dir; ?></p>
-    <p class="cabeceraitem">Descripción &nbsp; Cant. &nbsp; P.U. &nbsp;  Pre Tot</p>
-    <?php foreach ($items as $value) { ?>
-    <p class="items"><?php echo $value->prod.' &nbsp;'.$value->cantidad.' &nbsp; '.$value->precio.'&nbsp; '.$value->sub; ?></p>
-    <?php } ?>
+    <table>
+        <tr>
+            <td class="center">Descripción</td>
+            <td>Cant.</td>
+            <td>P.U.</td>
+            <td class="right">Pre Tot</td>
+        </tr>
+        <?php foreach ($items as $value) { ?>
+        <tr>
+            <td><?php echo $value->prod; ?></td>
+            <td><?php echo round($value->cantidad,3); ?></td>
+            <td><?php echo $value->precio; ?></td>
+            <td class="right"><?php echo $value->sub; ?></td>
+        </tr>
+        <?php } ?>
+    </table>
+
     <table>
         <tr>
             <td>**** OP. EXONERADA S/</td>

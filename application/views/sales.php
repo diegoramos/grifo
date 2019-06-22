@@ -1,13 +1,3 @@
-<!-- START PAGE CONTENT-->
-<?php 
-// if (isset($_GET)) {
-//     echo "<pre>";
-//     print_r ($_GET);
-//     echo "</pre>";
-//     exit;
-// }
- ?>
-
 <div class="page-content fade-in-up">
     <div class="row">
         <div class="col-md-12">
@@ -67,13 +57,13 @@
                             <div class="col-sm-1">
                                 <input name="tur" id="tur" class="form-control" type="text">
                             </div>
-                            <label class="col-sm-1 col-form-label text-right">Isla:</label>
+<!--                             <label class="col-sm-1 col-form-label text-right">Isla:</label>
                             <div class="col-sm-2">
                                 <select name="maq" id="maq" class="form-control">
                                     <option value="50131041">VAL TRADING SAC</option>
                                     <option value="TC6Y356743">PASO DE LOS ANDES SAC</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <label class="col-sm-1 col-form-label text-right">Caja:</label>
                             <div class="col-sm-1">
                                 <input name="caja" id="caja" class="form-control" type="text">

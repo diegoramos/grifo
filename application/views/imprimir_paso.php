@@ -96,7 +96,6 @@
 	            min-height: initial;
 	            box-shadow: initial;
 	            background: initial;
-	            page-break-after: always;
         	}
     	}
 	table{
@@ -133,7 +132,7 @@
 	<p class="text-center"><strong>RUC: 20511230935</strong></p>
 	<p class="text-center">Telefono:</p>
     <hr>
-    <p class="text-center otro-size3"><strong>Maq. Regist. N°: <?php echo $info->maq; ?></strong></p>
+    <p class="text-center otro-size3"><strong>Maq. Regist. N°: TC6Y356743</strong></p>
     <p class="text-center otro-size3"><strong>Factura de Venta Electronica</strong></p>
 	<p class="text-center otro-size3"><strong>N: <?php echo $info->nro; ?></strong></p>
     <p class="text-center fecha"><strong>Fecha: <?php echo $newDate.' - '.$info->hora; ?></strong></p>
@@ -143,7 +142,7 @@
     <p class="otro-size4">DIRECCION: <?php echo $info->dir; ?></p>
     <hr>
     <?php foreach ($items as $value) { ?>
-    <p class="text-center otro-size"><strong><?php echo $value->cantidad.'x'.$value->precio. ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S/'.$value->sub; ?></strong></p>
+    <p class="text-center otro-size"><strong><?php echo $value->cantidad.'x'.$value->precio. ' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S/'.$value->sub; ?></strong></p>
     <p class="text-center otro-size"><?php echo $value->prod; ?></p>
     <?php } ?>
     <hr>

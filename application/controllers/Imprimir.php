@@ -56,16 +56,15 @@ class Imprimir extends CI_Controller {
         	$html = $this->load->view('imprimir_ticket',$data, true);
         }else{
         	$html = $this->load->view('imprimir_paso',$data, true);
-        }
-        
-        $mpdf->SetDisplayMode('fullpage');
-        $mpdf->WriteHTML($html);
-        $mpdf->Output();
+		}
 
+		$mpdf->SetDisplayMode('fullpage');
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
 	}
 
 	function print_documento($id){
-	       echo  '<div class="button-group">
+	        echo '<div class="button-group">
 	          <a href="#" class="btn btn-success" onclick="printJS(\''.base_url().'imprimir/ver_pdf/'.$id.'\')">
 	            IMPRIMIR
 	          </a>
